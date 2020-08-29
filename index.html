@@ -1,1 +1,50 @@
-<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><title>Uptime Status</title><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ravizhan/site-status/favicon.ico" type="image/x-icon"/><script src="https://cdn.jsdelivr.net/gh/ravizhan/site-status/config.js"></script><link href="https://cdn.jsdelivr.net/gh/ravizhan/site-status/static/css/main.9d11a12e.css" rel="stylesheet"></head><body><div id="app"></div><script src="https://cdn.jsdelivr.net/gh/ravizhan/site-status/static/js/main.e6016862.js"></script></body></html>
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>
+			Ravi's site status
+		</title>
+		<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ravizhan/site-status/favicon.ico" type="image/x-icon" />
+		<script src="https://cdn.jsdelivr.net/gh/ravizhan/site-status/config.js">
+		</script>
+		<link href="https://cdn.jsdelivr.net/gh/ravizhan/site-status/static/css/main.9d11a12e.css" rel="stylesheet">
+	</head>
+	<body id="main">
+		<script>
+			function qs(qs){
+				var s = location.href;
+					s = s.replace("?","?&").split("&")
+				var res = "";
+				for(i=1;i<s.length;i++){
+					if(s[i].indexOf(qs+"=")==0){
+						res = s[i].replace(qs+"=","");
+					}
+				}
+				return res
+			}
+			function dark_mode() {
+				var element = document.getElementById("main")
+				element.style.backgroundColor = "#303030";
+				var element = document.getElementById("header")
+				element.style.backgroundColor = "#303030";
+				var element = document.getElementById("uptime")
+				element.style.backgroundColor = "#303030";
+			}
+			function startfun(){
+				console.log(qs("dark_mode"))
+				if(qs("dark_mode")=="true"){
+					dark_mode()
+				}
+			}
+			window.onload=function(){
+			startfun(); }
+		</script>
+		<div id="app">
+		</div>
+		<script src="https://cdn.jsdelivr.net/gh/ravizhan/site-status/static/js/main.e6016862.js">
+		</script>
+	</body>
+
+</html>
